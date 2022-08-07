@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+<p>List of Movies</p>
+
+   {% for item in all_movies %}
+
+   <p>{{  item.movie_title }}</p>
+
+   {%  endfor %}
+    
+
+{% endblock %}
+

@@ -1,0 +1,12 @@
+
+#make flask always listen
+
+export FLASK_DEBUG =True
+export FLASK_APP=app.py
+flask run
+
+CTRL C to exit 
+
+#activate virtual environment 
+
+source virtual/Scripts/activate
