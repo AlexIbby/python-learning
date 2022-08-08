@@ -1,12 +1,53 @@
 {% extends 'base.html' %}
 
+
+
+
+
 {% block main %}
+
+
+<form action="/movie_added" method="POST">
+
+   <label for="Movie Title">Add a Movie</label>
+   <br>
+   <br>
+
+   <input type="text" name="movie_add" placeholder="Enter a movie Carrie & Alex watched">
+
+   <input type="submit">
+
+</form>
+
 
 <p>List of Movies</p>
 
    {% for item in all_movies %}
 
-   <p>{{  item.movie_title }}</p>
+   <br>
+   <div class="card">
+      <div class="card_left">
+          <img class="card_left_img" src="/static/images{{ item.poster_path }}" alt="">
+      </div>
+
+      <div class="card_right">
+          <p class="movie_card_title">{{ item.original_title }}</p>
+          <p class="movie_card_director"> Directed by: {{ item.director }} </p>
+          <ul>
+              <li class="movie_card_header">{{item.release_date }}</li>
+              <li class="movie_card_header">Runtime</li>
+              <li class="movie_card_header">Genre</li>
+          </ul>
+
+          <p class="movie_card_overview">{{ item.movie_overview }}</p>
+
+          <p class="movie_card_rating"> Carrie Rating:  </p>
+          <p class="movie_card_rating"> Alex Rating:  </p>
+
+
+      </div>
+      <br>
+
 
    {%  endfor %}
     

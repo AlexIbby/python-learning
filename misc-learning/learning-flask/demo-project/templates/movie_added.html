@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+
+<h1> Succcess! {{ movie_add }} has been added to the Isabella Theatre Archives.</h1>
+<br>
+
+{% for key,value in movie_result.items() %}
+
+<p>{{ value }}</p>
+
+{% endfor %}
+
+
+<h1>You guys sure do watch a lot of movies</h1>
+<p>Consider adding random message for movies added</p>
+
+ 
+
+
+
+
+{% endblock %}
