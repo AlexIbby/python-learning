@@ -48,9 +48,10 @@ def index():
 def movie_added():
 
     movie_add = request.form.get("movie_add")
+    search_year = int(request.form.get("search_year"))
 
     #Getting Movie Data
-    movie_result = getMovie(movie_add)
+    movie_result = getMovie(movie_add, search_year)
 
     xx_original_title = movie_result['original_title'] 
     xx_movie_overview = movie_result['movie_overview'] 

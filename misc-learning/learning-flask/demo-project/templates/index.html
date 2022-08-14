@@ -6,18 +6,20 @@
 
 {% block main %}
 
+<div class="add_movie">
+    <form action="/movie_added" method="POST">
 
-<form action="/movie_added" method="POST">
+    <label for="Movie Title">Add a Movie</label>
+    <br>
+    <br>
 
-   <label for="Movie Title">Add a Movie</label>
-   <br>
-   <br>
+    <input type="text" name="movie_add" placeholder="Enter a movie Carrie & Alex watched" required>
+    <input type="text" name="search_year" placeholder="Year"  required>
 
-   <input type="text" name="movie_add" placeholder="Enter a movie Carrie & Alex watched">
+    <input type="submit">
 
-   <input type="submit">
-
-</form>
+    </form>
+</div>
 
 
 <p>List of Movies</p>
@@ -34,15 +36,16 @@
           <p class="movie_card_title">{{ item.original_title }}</p>
           <p class="movie_card_director"> Directed by: {{ item.director }} </p>
           <ul>
-              <li class="movie_card_header">{{item.release_date }}</li>
+              <li class="movie_card_header"> {{ item.release_date[:4] }}</li>
               <li class="movie_card_header">Runtime</li>
               <li class="movie_card_header">Genre</li>
           </ul>
 
           <p class="movie_card_overview">{{ item.movie_overview }}</p>
 
-          <p class="movie_card_rating"> Carrie Rating:  </p>
-          <p class="movie_card_rating"> Alex Rating:  </p>
+          <p class="movie_card_rating"> Carrie Rating:    </p>
+          <br>
+          <p class="movie_card_rating"> Alex Rating:    </p>
 
 
       </div>

@@ -9,16 +9,17 @@ api_key = 'de42831cb837cfa3ca687d3e0d1c68c9'
 # getMovie() function returns the details of movie into a dictionary. It uses nested fucntions with other API calls to get details like cast and crew.
 # It allows easy access for addtional API calls by including the TMDB ID
 
-def getMovie(search_term: str):
+def getMovie(search_term, search_year: str):
     movie_result = {}
 
     # search_term = "The Avengers"  # str(input("Movie Title?: "))
     if " " in search_term:
         search_term = search_term.replace(" ", "%20")
+        search_year = int(search_year)
 
     # GET Search-Movie
 
-    url = f"https://api.themoviedb.org/3/search/movie?api_key={api_key}&language=en-US&query={search_term}&page=1&include_adult=false"
+    url = f"https://api.themoviedb.org/3/search/movie?api_key={api_key}&language=en-US&query={search_term}&page=1&include_adult=false&year={search_year}"
 
     response = urlopen(url)
     movie_search_json_file = json.loads(response.read())
@@ -88,7 +89,10 @@ def getCredits(movie_result: dict):
 #Database add will need to change too
 # def movieDetails(movie_result):
 
-# movie_result = getMovie("Indpendence Day 1996")
+# movie_result = getMovie("Independence Day", "1996")
+
+# for key,value in movie_result.items():
+#     print(key,value)
 
 
 
