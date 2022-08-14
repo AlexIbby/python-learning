@@ -6,6 +6,8 @@ import urllib.request
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///themovies.db'
+app.jinja_env.auto_reload = True
+app.config["TEMPLATES_AUTO_RELOAD"] = True
 
 
 ######DATABASE ITEMS #######
@@ -91,3 +93,9 @@ def movie_added():
     title=title, 
     movie_add=movie_add,
     movie_result = movie_result)
+
+
+
+if __name__ == '__main__':    
+    app.run(debug=True)
+    
