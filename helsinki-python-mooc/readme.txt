@@ -1,1 +1,0 @@
-This directory contains solutions to problems from the University of Helsinki 2022 Python MOOC. Directories are organized by the unit studied in the course. 
